@@ -7,10 +7,13 @@
     "html": "npm-run-all html/*",
     "css/sass": "sass src/assets/scss/:dist/css/ --no-source-map",
     "css": "yarn clean/css && npm-run-all -p css/*",
+    "js/plain": "cpx 'src/assets/js/*.js' 'dist/js/'",
+    "js": "npm-run-all js/*",
     "images/imagemin": "node imagemin.js",
     "images": "yarn clean/images && npm-run-all -s images/*",
     "watch/server": "browser-sync start -s dist -f 'src, **/*.html, !node_modules/**/*'",
     "watch/html": "watch 'npm run html' ./src/assets/html",
+    "watch/js": "watch 'npm run js' ./src/assets/js",
     "watch/css": "watch 'npm run css' ./src/assets/scss",
     "watch/images": "onchange 'src/assets/images' -e '**/*.DS_Store' -- yarn images",
     "watch": "npm-run-all -p watch/*"
