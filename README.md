@@ -1,5 +1,7 @@
 # 静的サイト作成のためのスターターキット
 
+## 使用方法
+
 ```console
 yarn install
 ```
@@ -8,7 +10,7 @@ yarn install
 yarn watch
 ```
 
-## 静的サイト作成のためのスターターキット
+## 機能
 
 -ディレクトリをクリーンにする(rimraf)  
 -html/js を dist へコピー  
