@@ -1,8 +1,9 @@
 {
   "license": "UNLICENSED",
+  "type": "module",
   "scripts": {
     "clean/css": "rimraf dist/css && mkdir -p dist/css",
-    "clean/images": "rimraf dist/assets/images && mkdir -p dist/assets/images",
+    "clean/images": "rimraf dist/images && mkdir -p dist/images",
     "html/plain": "cpx 'src/assets/html/**/*.html' 'dist/'",
     "html": "npm-run-all html/*",
     "css/sass": "sass src/assets/scss/:dist/css/ --no-source-map",
