@@ -1,0 +1,41 @@
+@use "setting" as s;
+
+// *------------------*
+// *  レスポンシブ定義
+// *------------------*
+@mixin tab {
+    @media screen and (max-width: s.$tab) {
+        @content;
+    }
+}
+
+@mixin sp-l {
+    @media screen and (max-width: s.$sp-l) {
+        @content;
+    }
+}
+
+@mixin sp {
+    @media screen and (max-width: s.$sp) {
+        @content;
+    }
+}
+
+// *------------------*
+// *  その他定義
+// *------------------*
+@mixin inner-width01 {
+    width: s.$inner_width_01;
+    max-width: 100%;
+    padding: s.$inner_padding_01;
+    margin: 0 auto;
+}
+
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+
+    @include tab{
+        flex-direction: column;
+    }
+}

@@ -32,6 +32,7 @@
       content="カラーコード（例：#F89174）"
     />
     <!-- スタイルシート -->
+    <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
@@ -44,7 +45,7 @@
             <a href="#"><img src="images/logo.svg" alt="ロゴ説明" /></a>
           </h1>
         </div>
-        <div class="header__gnav">
+        <div class="header__gnav js-menu">
           <nav class="c-gnav">
             <ul class="c-gnav__list">
               <li class="c-gnav__item">
@@ -69,7 +70,7 @@
           </nav>
         </div>
         <div class="header__btn">
-          <button type="button" class="btnMenu">
+          <button type="button" class="c-btnMenu js-btnMenu">
             <span></span>
           </button>
         </div>
@@ -90,8 +91,9 @@
       <footer>footer</footer>
 
       <!-- pagetop -->
-      <div class="pagetop" id="pagetop">ページトップへ</div>
+      <a href="#">ページトップへ</a>
     </div>
     <!-- /.siteWrapper -->
+    <script src="js/script.js"></script>
   </body>
 </html>

@@ -1,3 +1,157 @@
-p {
-  color: red;
+@use "setting" as s;
+@use "mixins" as *;
+
+/*このCSSはSCSSから出力されたものです*/
+/*----------------------------------------
+* last update 20xx-xx
+*
+* +00 reset
+* +01 base
+* +02 layout l-●●
+* +03 module/component c-●●
+* +04 header
+* +05 footer
+* +06 section
+*
+----------------------------------------*/
+
+/*----------------------------------------------------
+++00 reset
+----------------------------------------------------*/
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
+/*----------------------------------------------------
+++01 base
+----------------------------------------------------*/
+html {
+  font-size: 62.5%; // 1rem = 10px
+}
+
+body {
+  font-family: s.$font_family_default;
+  font-size: s.$font_size_default;
+  font-weight: s.$font_weight_default;
+  line-height: s.$line_height_default;
+  color: s.$txt_color_default;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+.siteWrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+  overflow-x: hidden;
+}
+
+/*----------------------------------------------------
+++02 layout
+----------------------------------------------------*/
+.l-section {
+  padding: 60px 0;
+}
+
+.l-inner01 {
+  @include inner-width01;
+}
+
+/*----------------------------------------------------
+++03 module/component
+----------------------------------------------------*/
+
+/*----------------------------------------------------
+++04 header
+----------------------------------------------------*/
+.header {
+  position: relative;
+  &__btn {
+    display: none;
+  }
+  @include tab {
+    &__gnav {
+      display: none;
+    }
+
+    &__gnav.menu_isOpen {
+      display: block;
+    }
+
+    &__btn {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    .c-btnMenu {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .c-btnMenu span {
+      display: inline-block;
+      width: 30px;
+      height: 2px;
+      background-color: #000;
+      position: relative;
+    }
+
+    .c-btnMenu span::before,
+    .c-btnMenu span::after {
+      content: "";
+      display: inline-block;
+      width: 30px;
+      height: 2px;
+      background-color: #000;
+      position: absolute;
+      left: 0px;
+      transition: all 0.3s ease-in-out;
+    }
+    .c-btnMenu span::before {
+      top: 8px;
+    }
+    .c-btnMenu span::after {
+      top: -8px;
+    }
+
+    /* c-btnMenu_isOnがついた時のスタイル */
+    .c-btnMenu.c-btnMenu_isOn span {
+      background-color: transparent;
+    }
+    .c-btnMenu.c-btnMenu_isOn span::before,
+    .c-btnMenu.c-btnMenu_isOn span::after {
+      top: 0;
+    }
+    .c-btnMenu.c-btnMenu_isOn span::before {
+      transform: rotate(45deg);
+    }
+    .c-btnMenu.c-btnMenu_isOn span::after {
+      transform: rotate(-45deg);
+    }
+  }
+}
+/*----------------------------------------------------
+++05 footer
+----------------------------------------------------*/
+/*----------------------------------------------------
+++06 section
+----------------------------------------------------*/
