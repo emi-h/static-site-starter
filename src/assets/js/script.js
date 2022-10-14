@@ -12,7 +12,7 @@ function closeNav() {
 document.getElementById('js-btnMenu').addEventListener('click',function(){
   toggleNav();
 });
-  document.getElementById('nav').addEventListener('click',function(){
+  document.getElementById('js-menu').addEventListener('click',function(){
     closeNav();
 });
 
