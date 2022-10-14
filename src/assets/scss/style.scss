@@ -64,6 +64,22 @@ img {
   overflow-x: hidden;
 }
 
+.noScroll {
+  overflow: hidden;
+}
+
+.pc_non {
+  display: none;
+  @include tab {
+    display: block;
+  }
+}
+
+.sp_non {
+  @include tab {
+    display: none;
+  }
+}
 /*----------------------------------------------------
 ++02 layout
 ----------------------------------------------------*/
@@ -94,6 +110,7 @@ img {
 
     &__gnav.menu_isOpen {
       display: block;
+      overflow-y: scroll;
     }
 
     &__btn {
