@@ -26,3 +26,10 @@
         @content;
     }
 }
+
+@mixin inner-width01{
+    width: s.$inner_width_01;
+    max-width: 100%;
+    padding: s.$inner_padding_01;
+    margin: 0 auto;
+}
